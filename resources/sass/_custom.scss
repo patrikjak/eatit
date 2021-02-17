@@ -1,0 +1,1711 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ///////////////////////// DEFAULT ///////////////////////// */
+
+.row {
+  width: 100%;
+}
+.row:before, .row:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.left {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.left-more {
+  width: 70%;
+}
+.left-less {
+  width: 30%;
+}
+.right {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.right-more {
+  width: 70%;
+}
+.right-less {
+  width: 30%;
+}
+.col-2 {
+    width: 50%;
+    float: left;
+}
+.col-3 {
+    width: 33%;
+    float: left;
+}
+.col-4 {
+    width: 25%;
+    float: left;
+}
+.col-5 {
+    width: 20%;
+    float: left;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.8);
+    z-index: 10;
+    display: none;
+}
+.overlay > img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  display: inline-block;
+  width: 25%;
+  background-color: transparent;
+  color: $grey;
+  border: solid $ceramic 2px;
+  border-radius: 30px;
+  padding: 2% 4%;
+  text-align: center;
+  text-decoration: none;
+  transition: .5s;
+  cursor: pointer;
+}
+.button:hover {
+  color: $white;
+  background-color: $ceramic;
+}
+.invalid-input {
+  border-bottom-color: $strawberry !important;
+}
+.error-notification {
+    font-size: 13px;
+    color: $strawberry;
+}
+.error-log {
+  color: $grey;
+  width: 50%;
+}
+.time-err, .portions-err {
+    text-align: center;
+}
+.error-log small {
+  font-weight: 400 !important;
+}
+.page {
+  overflow: hidden;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+label {
+  display: block;
+}
+input, select {
+  display: block;
+  width: 25%;
+  border: none;
+  border-bottom: solid $grey 2px;
+  background-color: transparent;
+  padding: 1% 2%;
+  font-family: inherit;
+  color: $grey;
+  margin: 1% 0;
+}
+button {
+  display: block;
+  width: 25%;
+  margin-top: 3%;
+  padding: 1% 2%;
+  border: solid $grey 2px;
+  background-color: $grey;
+  font-family: inherit;
+  color: $white;
+  transition-duration: .5s;
+  border-radius: 30px;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.1,1.1);
+}
+.error-log-not {
+  width: 80%;
+  margin: 2% 10%;
+  background-color: $bg-white;
+  border-radius: 25px;
+}
+.error-log-not:first-child {
+  margin-top: 15%;
+}
+.error-log-not p {
+  color: $grey;
+  text-align: left;
+  font-weight: 400;
+  padding-left: 5%;
+  margin: 3% 0;
+}
+.close-btn {
+  margin: 3% 0;
+}
+.error-log-not i {
+  margin-right: 15%;
+  cursor: pointer;
+}
+
+/* ///////////////////////// NAVIGATION ///////////////////////// */
+
+.nav {
+  width: 100%;
+  height: 6vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $dark-brown;
+  transition-duration: .5s;
+    z-index: 1000;
+}
+.nav ul {
+  list-style-type: none;
+}
+.nav li {
+  display: inline-block;
+  max-height: 20px;
+  margin-top: 15px;
+}
+.nav li::after {
+  display: block;
+  width: 0;
+  height: 2px;
+  content: '';
+  transition-duration: .5s;
+  transition-property: width;
+  background-color: $white;
+}
+.nav li:hover::after {
+  width: 100%;
+}
+.nav a {
+  text-decoration: none;
+  color: $white;
+  font-size: 16px;
+  transition: .5s;
+}
+.nav img {
+    display: inline-block;
+    width: auto;
+    height: 4vh;
+    border-radius: 50%;
+    position: absolute;
+    top: 1vh;
+}
+#profile-photo {
+    margin-right: 8%;
+}
+.user-name {
+    width: auto;
+    max-width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: $white;
+}
+#user-name-with-img {
+    max-width: 50%;
+}
+.logout {
+    width: auto;
+    overflow: hidden;
+}
+.left li {
+  margin-left: 5%;
+}
+.right li {
+  margin-right: 5%;
+}
+.status-bar {
+    position: fixed;
+    z-index: 100;
+    bottom: 10%;
+    left: 20%;
+    text-align: center;
+    background-color: $bg-white;
+    width: 60%;
+    border-radius: 10px;
+}
+.status-bar p {
+    color: $grey;
+    font-weight: 400;
+}
+
+
+/* ////////////////////////// HOME ///////////////////////// */
+.home {
+  background-image: url("/eatit/public/images/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 94vh;
+}
+.home img {
+  max-width: 50%;
+  height: auto;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.home p {
+  color: $white;
+  font-size: 30px;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+.log-buttons {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.log-buttons a {
+  display: inline-block;
+  text-align: center;
+  border: solid $dark-brown 2px;
+  padding: 2% 4%;
+  border-radius: 30px;
+  background-color: $dark-brown;
+  width: 40%;
+  margin-left: 10%;
+  color: $white;
+  text-decoration: none;
+  transition-duration: .5s;
+}
+.log-buttons a:first-child {
+  margin-left: 0;
+}
+.log-buttons a:hover {
+  transform: scale(1.1,1.1);
+}
+.home .button {
+  margin-top: 85%;
+  margin-right: 5%;
+}
+.home .button:hover {
+  background-color: $ceramic;
+  color: $white;
+}
+
+/* //////////////////////////////// ABOUT /////////////////////////////////////// */
+
+.about {
+  width: 100%;
+  height: 94vh;
+}
+.about img {
+    width: 60%;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+.about h1 {
+  color: $grey;
+  padding-top: 10%;
+  font-size: 70px;
+    text-align: center;
+}
+.about p, .about p {
+    margin-top: 15%;
+    width: 100%;
+    line-height: 25px;
+    color: $grey;
+    font-size: 35px;
+    text-align: center;
+}
+.about h3 {
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+.how-to-use .row {
+    height: 94vh;
+}
+.how-to-use p {
+    text-align: center;
+    color: $grey;
+    font-size: 25px;
+}
+.how-to-use p:first-child {
+    margin-top: 30%;
+}
+#create-recipe p span {
+    display: block;
+    font-size: 70px;
+    color: $dark-brown;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+#search-recipe p:first-child {
+    margin-top: 20%;
+}
+#search-recipe p span {
+    display: inline-block;
+    margin: 1% 10%;
+    color: $dark-brown;
+    font-size: 40px;
+}
+#fridge-index p:first-child {
+    font-size: 40px;
+    color: $dark-brown;
+    margin-bottom: 10%;
+}
+.how-to-use img {
+    width: 60%;
+    margin-top: 15%;
+    margin-left: 20%;
+}
+
+/* ////////////////////////////// FOOTER ///////////////////////////////////// */
+
+.footer {
+    background-image: url("/eatit/public/images/footer.svg");
+    background-size: cover;
+    color: $grey;
+    text-align: center;
+}
+.footer p {
+    padding: 10% 10% 5% 10%;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* ////////////////////////////// REGISTER PAGE ///////////////////////////////////// */
+
+.login {
+  background-image: url("/eatit/public/images/register.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 94vh;
+}
+.login h1 {
+  font-size: 50px;
+  color: $dark-brown;
+  font-weight: 400;
+  text-align: left;
+}
+.login img {
+  display: block;
+  max-width: 75%;
+  height: auto;
+}
+.login #forgot-password {
+  display: inline-block;
+  width: auto;
+  font-weight: 400;
+  margin-top: 5%;
+  background-color: transparent;
+  color: $white;
+  border: none;
+  text-align: left;
+  padding: 0;
+  transition-duration: .3s;
+}
+.login #forgot-password:hover {
+  color: $grey;
+}
+.login form {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.login input, button {
+  width: 50%;
+  margin: 3% 0;
+  padding: 2% 4%;
+}
+#remember {
+  width: 2%;
+  margin-right: 2%;
+}
+.login label {
+  color: $grey;
+  font-weight: 400;
+}
+.login input, .login ::placeholder {
+  color: $white;
+}
+.login input {
+  border-bottom-color: $dark-brown;
+}
+.login p {
+    margin: 3% 5% 3% 0;
+}
+.login #email-status {
+    width: 70%;
+    margin: 5% 10%;
+    color: $white;
+}
+
+/* ////////////////////////////// DASHBOARD ////////////////////////////// */
+
+.dashboard {
+  width: 100%;
+  height: 94vh;
+  background-image: url("/eatit/public/images/bowl.jpg");
+  background-size: cover;
+  padding-top: 5%;
+}
+.add-new {
+  width: 80%;
+  margin-top: 2%;
+  margin-left: 10%;
+}
+.add-new input {
+  display: inline-block;
+  width: 60%;
+  padding: 1% 2%;
+  background-color: $bg-white;
+  border: solid 2px $grey;
+  border-radius: 30px;
+  transition-duration: .5s;
+}
+.add-new input:focus {
+  border-color: $light-brown;
+}
+.add-new a {
+  display: inline-block;
+  background-color: $grey;
+  border: solid 2px $grey;
+  color: $white;
+  font-size: 15px;
+  width: 30%;
+  margin-left: 5%;
+  padding: 1% 2%;
+}
+.add-new a:hover, .add-new a:focus {
+  background-color: $light-brown;
+  border-color: $light-brown;
+}
+.dashboard .card {
+  width: 20%;
+  height: 60vh;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  float: left;
+  text-align: center;
+  color: $white;
+  transition-duration: .3s;
+  border-radius: 10px;
+}
+.dashboard .card h1 {
+  margin: 25% 5%;
+}
+.dashboard .card i {
+  display: block;
+  font-size: 50px;
+  margin-top: 25%;
+  animation: breath infinite 2s ease-in-out;
+  animation-play-state: paused;
+}
+.card .button {
+  width: 80%;
+  margin-top: 25%;
+  color: $white;
+  border-color: $white;
+}
+.card .button:hover {
+  border-color: $ceramic;
+}
+#create {
+  background-color: $grey;
+}
+#search {
+  background-color: $ceramic;
+  color: $grey;
+}
+#manage {
+  background-color: $dark-brown;
+}
+#fridge {
+  background-color: $light-brown;
+}
+#search .button {
+  border-color: $grey;
+  background-color: $grey;
+}
+.card .button:hover {
+  transform: scale(1.1,1.1);
+}
+
+/* //////////////////////////// RECIPE CREATE ////////////////////////////// */
+
+.create {
+  background-image: url("/eatit/public/images/top-view-food.min.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 94vh;
+  position: absolute;
+  top: 6vh;
+  left: 0;
+}
+.create-form {
+    width: 80%;
+    height: 74vh;
+    background-color: $white;
+    margin: 10vh auto;
+    border-radius: 10px;
+    position: relative;
+}
+.create-form h1 {
+    margin-top: 0;
+    text-align: center;
+}
+.logo-circle {
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $white;
+    transform: translateY(-50px);
+}
+.logo-circle img {
+    display: block;
+    max-width: 60px;
+    height: auto;
+    margin: 0 auto;
+    transform: translateY(20px);
+}
+
+.tab {
+    width: 90%;
+    margin: 0 5%;
+    display: none;
+}
+.tab label {
+    margin-top: 3%;
+}
+.tab input, textarea {
+    font-weight: 400;
+}
+.tab input[type="text"] {
+    width: 100%;
+    margin-top: 2%;
+    font-size: 14px;
+}
+
+#upload-photo-h {
+    text-align: center;
+}
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    margin: 10% auto;
+}
+.upload-btn button {
+    width: 100%;
+    padding: 5% 3%;
+}
+.upload-btn button.uploaded {
+    background-color: $dark-brown;
+    border-color: $dark-brown;
+}
+.upload-btn input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio {
+    margin: 0.5rem;
+}
+.radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+.radio input[type="radio"] + .radio-label:before {
+    content: '';
+    background: #f4f4f4;
+    border-radius: 100%;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    position: relative;
+    top: -0.2em;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+}
+.radio input[type="radio"]:checked + .radio-label:before {
+    background-color: $dark-brown;
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input[type="radio"]:focus + .radio-label:before {
+    outline: none;
+    border-color: $dark-brown;
+}
+.radio input[type="radio"]:disabled + .radio-label:before {
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+.radio input[type="radio"] + .radio-label:empty:before {
+    margin-right: 0;
+}
+
+.navigation {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    text-align: right;
+}
+.navigation button {
+    width: 10%;
+    display: inline-block;
+    padding: 1% 2%;
+    border-radius: 5px;
+    margin-left: 3%;
+}
+
+.circle {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 5px $dark-brown;
+    position: relative;
+}
+.circle input[type="text"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    text-align: center;
+    border-bottom-color: $dark-brown;
+    border-bottom-width: 1px;
+}
+.circle-label {
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 18px;
+    color: $grey;
+}
+
+#create-ingredients label {
+    margin-left: 10%;
+}
+#ingredient, #quantity {
+    width: 80%;
+    margin: 2% auto;
+}
+#ingredient {
+    margin-bottom: 5%;
+}
+#add-ingredient, #add-ingredient-edit {
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 35%;
+}
+.ingredient-list {
+    width: 80%;
+    height: 250px;
+    margin: 2% auto;
+    border: solid 2px $grey;
+    overflow: auto;
+    border-radius: 5px;
+}
+.ingredient-list p {
+    margin: 5%;
+    text-transform: lowercase;
+}
+.ingredient-list p:first-child {
+    text-transform: inherit;
+    color: $dark-brown;
+    font-weight: 400;
+    border-bottom: solid 1px $grey;
+}
+.ingredient-list table {
+    width: 90%;
+    margin: 0 5% 5% 5%;
+}
+.ingredient-list table .ingredient {
+    display: inline-block;
+    width: 60%;
+    padding: 2% 0;
+    text-transform: lowercase;
+}
+.ingredient-list table .edit-button, .ingredient-list table .delete-button {
+    display: inline-block;
+    width: 18%;
+    cursor: pointer;
+    margin: 0 1%;
+}
+.edit-button, .delete-button {
+    background-color: $light-brown;
+    color: $white;
+    font-size: 13px;
+    text-align: center;
+    padding: 2% 3%;
+    border-radius: 5px;
+}
+.edit-button:hover {
+    background-color: $dark-brown;
+}
+.delete-button {background-color: $delete-button}
+.delete-button:hover {background-color: $strawberry;}
+
+#create-ingredients .error-notification {
+    margin-top: 2%;
+    margin-left: 10%;
+}
+.tab .col-3 .error-notification {
+    text-align: center;
+}
+
+.tab#create-process label {
+    margin-left: 5%;
+}
+#create-process .error-notification {
+    margin-left: 5%;
+}
+.tab textarea {
+    width: 90%;
+    margin: 1% 5%;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 1% 2%;
+    resize: none;
+    border: solid 1px $grey;
+    border-radius: 5px;
+}
+
+.indicators {
+    width: 100%;
+    height: 3vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.indicators span {
+    display: inline-block;
+    width: 18%;
+    height: .7vh;
+    background-color: $ceramic;
+    margin: 0 1%;
+    float: left;
+    border-radius: 20px;
+    opacity: .5;
+}
+.indicators span.active {
+    background-color: $grey;
+    opacity: .8;
+}
+.indicators span.finished {
+    opacity: 1;
+    background-color: $dark-brown;
+}
+
+/* //////////////////////////// FIND RECIPE ////////////////////////////// */
+
+.find-recipe {
+    background-size: cover;
+    background-attachment: fixed;
+}
+.search-panel {
+    width: 30%;
+    height: 100vh;
+    float: left;
+    border-right: solid 2px $grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $white;
+    padding: 5% 3%;
+}
+.recipes {
+    width: 70%;
+    float: left;
+    position: relative;
+    top: 0;
+    left: 30%;
+}
+.recipes .overlay {
+    display: none;
+    top: 6vh;
+    opacity: 1;
+    background-image: url("/eatit/public/images/random-recipe.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 94vh;
+}
+.recipes .overlay .recipe-card {
+    width: 50%;
+    height: 64vh;
+    background-color: $bg-white;
+    border-radius: 10px;
+    margin: 5vh 25%;
+}
+.recipes .overlay .recipe-card img {
+    height: 40vh;
+}
+.recipes .overlay .recipe-card .recipe-title {
+    margin: 3% 0;
+}
+.recipes .overlay .recipe-card .recipe-title a {
+    font-size: 20px;
+ }
+.recipes .overlay .recipe-card p {
+    text-align: center;
+    margin-left: 0;
+}
+.recipes .overlay .col-2:first-child {
+    position: relative;
+    height: 94vh;
+}
+.recipes .overlay .col-2:first-child .exit-btn {
+    width: 40%;
+    margin-left: 30%;
+    position: absolute;
+    bottom: 8vh
+}
+.recipes .overlay .col-2:first-child .exit-btn button {
+    width: 60%;
+    margin-left: 20%;
+    padding: 3% 4%;
+}
+.recipes .overlay .col-2:last-child h1 {
+    font-size: 80px;
+    margin-top: 25%;
+    margin-left: 5%;
+    margin-right: 30%;
+    color: $grey;
+}
+.search-panel h1 {
+    margin: 3% 5% 0 5%;
+    font-size: 35px;
+    color: $grey;
+    text-align: center;
+}
+.search-panel p {
+    text-align: center;
+    color: $grey;
+    margin-top: 10%;
+}
+.search-panel input {
+    width: 100%;
+    padding: 3% 4%;
+}
+.filter {
+    width: 90%;
+    margin: 5%;
+}
+.filter button {
+    width: 100%;
+    background-color: $bg-white;
+    color: $grey;
+    border: none;
+    padding: 5%;
+    font-weight: 400;
+}
+.filter button:hover {
+    transform: none;
+}
+.filter button.selected {
+    background-color: $grey;
+    color: $white;
+    transform: scale(1.1,1.1);
+}
+.filter #recipe-title {
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+.filter #recipe-ingredients {
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+}
+.filter input {
+    margin-top: 5%;
+}
+#choose-random {
+    background-color: $light-brown;
+    font-weight: 400;
+    border: none;
+    width: 50%;
+    margin-top: 10%;
+    margin-left: 25%;
+    padding: 3%;
+}
+.choose-category {
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.choose-category button {
+    width: 40%;
+    height: 12vh;
+    display: block;
+    float: left;
+    margin: 3% 5%;
+    text-transform: uppercase;
+    background-color: $bg-white;
+    color: $grey;
+    font-weight: 400;
+    border: solid 1px $grey;
+    border-radius: 5px;
+}
+.choose-category button img {
+    width: 30%;
+    display: block;
+    margin: 10% 35%;
+}
+.choose-category button img.white-icon {
+    display: none;
+}
+.choose-category button:hover {
+    background-color: $bg-white;
+}
+.choose-category button.active {
+    background-color: $grey;
+    color: $white;
+}
+.recipe-not-found {
+    font-size: 50px;
+    margin-top: 20%;
+    text-align: center;
+    color: $grey;
+}
+.recipe-card {
+    width: 20%;
+    height: 37vh;
+    perspective: 600px;
+    margin: 5% 2.5%;
+    float: left;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    animation-name: smooth-display;
+    animation-duration: 2s;
+}
+.recipe-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-origin: right center;
+    transform-style: preserve-3d;
+}
+.recipe-card-inner.flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+.recipe-card-front, .recipe-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: $white;
+}
+.recipe-card-back {
+    transform: rotateY(180deg);
+}
+.recipe-card img {
+    width: 100%;
+    transition-duration: .5s;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.recipe-card .recipe-title {
+    width: 100%;
+    border-bottom: solid 1px $dark-brown;
+}
+.recipe-title h1 {
+    margin: 0;
+}
+.recipe-title a {
+    display: block;
+    text-align: left;
+    padding: 5% 10%;
+    color: $grey;
+    font-size: 18px;
+    text-decoration: none;
+    transition-duration: .3s;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.recipe-card img:hover {
+    transform: scale(1.05, 1.05);
+}
+.recipe-title a:hover {
+    color: $dark-brown;
+}
+.recipe-card p {
+    text-align: left;
+    margin-left: 10%;
+    color: $grey;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.recipe-card .show-ingredients-btn {
+    display: block;
+    width: 80%;
+    margin: 5% 10%;
+    background-color: $dark-brown;
+    border: none;
+    padding: 3%;
+}
+.recipe-card .show-ingredients-btn:hover {
+    background-color: $grey;
+    transform: none;
+}
+.recipe-card #back {
+    margin: 10%;
+}
+.recipe-card .recipe-ingredients-list {
+    width: 80%;
+    height: 70%;
+    margin: 10% 10% 5% 10%;
+    text-align: center;
+    overflow: auto;
+}
+.recipe-card .recipe-ingredients {
+    list-style-type: none;
+    text-transform: lowercase;
+}
+.recipe-card .recipe-ingredients li {
+    margin: 3% 0;
+}
+
+/* //////////////////////////// RECIPE ////////////////////////////// */
+
+.recipe {
+    background-image: url("/eatit/public/images/recipe-bg.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 94vh;
+}
+.recipe .col-2:first-child {
+    width: 40%;
+}
+.recipe .col-2:last-child {
+    width: 60%;
+}
+.recipe .overlay img.landscape {
+    width: 50%;
+    max-height: 60%;
+    object-fit: cover;
+}
+.recipe .overlay img.portrait {
+    width: 30%;
+    max-height: 65%;
+    object-fit: cover;
+}
+.recipe .overlay img.square {
+    width: 30%;
+    object-fit: cover;
+}
+.recipe .overlay .exit-btn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.recipe .overlay .exit-btn i {
+    color: $white;
+    font-size: 35px;
+    cursor: pointer;
+}
+.recipe .recipe-preview-photo {
+    -webkit-box-shadow: 0 0 26px 12px rgba(98,109,113,1);
+    -moz-box-shadow: 0 0 26px 12px rgba(98,109,113,1);
+    box-shadow: 0 0 26px 12px rgba(98,109,113,1);
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.recipe .image-overlay {
+    position: relative;
+    margin: 30% 10% 10% 20%;
+    width: 350px;
+    height: 350px;
+}
+.recipe .image-overlay .overlay {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform: scale(0);
+    opacity: 0;
+    transition: .5s;
+}
+.recipe .image-overlay:hover #full-screen-overlay {
+    transform: scale(1);
+    opacity: 1;
+}
+.recipe .image-overlay .overlay #full-screen {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.recipe, .recipe-2 {
+    color: $grey;
+}
+.recipe h1 {
+    font-size: 70px;
+    margin-top: 15%;
+    margin-right: 10%;
+}
+.recipe #description {
+    font-size: 20px;
+    margin-right: 10%;
+}
+.recipe .line, .recipe-2 .line {
+    width: 90%;
+    height: 3px;
+    background-color: $light-brown;
+}
+.recipe .recipe-info {
+    width: 90%;
+    margin-top: 5%;
+    margin-right: 10%;
+}
+.recipe .info-group {
+    text-align: center;
+}
+.recipe .info-group img {
+    width: 50px;
+    min-height: 60px;
+}
+.recipe .info-group .definition {
+    color: $dark-brown;
+    font-weight: 400;
+    font-size: 20px;
+}
+.recipe-2 {
+    width: 100%;
+    height: 94vh;
+    position: relative;
+}
+.recipe-2 .col-2:first-child {
+    width: 30%;
+}
+.recipe-2 .ingredients {
+    width: 80%;
+    height: 84vh;
+    margin: 5vh 10%;
+    padding: 5% 10%;
+    background-color: $bg-white;
+    border-radius: 10px;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px 1px rgba(98,109,113,1);
+    -moz-box-shadow: 0 0 10px 1px rgba(98,109,113,1);
+    box-shadow: 0 0 10px 1px rgba(98,109,113,1);
+}
+.recipe-2 .ingredients .list-of-ingredients {
+    height: 50vh;
+    overflow-y: auto;
+}
+.recipe-2 .ingredients .list-of-ingredients::-webkit-scrollbar {
+    width: 10px;
+}
+.recipe-2 .ingredients .list-of-ingredients::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+.recipe-2 .ingredients .list-of-ingredients::-webkit-scrollbar-thumb {
+    background-color: $grey;
+    border-radius: 5px;
+}
+.recipe-2 .ingredients .list-of-ingredients p {
+    margin: 3% 0;
+}
+.recipe-2 .ingredients h1 {
+    text-align: center;
+}
+.recipe-2 .ingredients p {
+    display: inline-block;
+    font-size: 18px;
+}
+.recipe-2 .ingredients .availability {
+    font-weight: 300;
+}
+.recipe-2 .ingredients img {
+    width: 18px;
+    margin-left: 3%;
+    position: relative;
+    top: 3px;
+}
+.recipe-2 .ingredients .explanation {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    width: 90%;
+    margin: 0 5%;
+}
+.recipe-2 .explanation .line {
+    width: 100%;
+}
+.recipe-2 .ingredients .explanation p {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+}
+.recipe-2 .ingredients .available {
+    color: $success;
+}
+.recipe-2 .ingredients .not-available {
+    color: $strawberry;
+}
+.recipe-2 .col-2:last-child {
+    width: 70%;
+}
+.recipe-2 .process {
+    width: 80%;
+    margin: 5% 15% 0 5%;
+}
+.recipe-2 .process h1 {
+    font-size: 40px;
+    margin-top: 5%;
+}
+.recipe-2 .process p {
+    line-height: 30px;
+}
+.recipe-2 .actions {
+    width: 80%;
+    height: 15vh;
+    background-color: $bg-white;
+    -webkit-box-shadow: 0 0 10px 1px rgba(98,109,113,1);
+    -moz-box-shadow: 0 0 10px 1px rgba(98,109,113,1);
+    box-shadow: 0 0 10px 1px rgba(98,109,113,1);
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+}
+.recipe-2 .actions a, .recipe-2 .actions input {
+    text-align: center;
+    width: 70%;
+    height: 4vh;
+    margin: 5.5vh 15%;
+    background-color: $light-brown;
+    color: $white;
+    border: none;
+    font-size: 15px;
+}
+.recipe-2 .actions input {
+    background-color: $delete-button;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 2% 4%;
+}
+.recipe-2 .actions p {
+    text-align: center;
+    margin: 12% 10% 0 10%;
+    line-height: 30px;
+}
+
+/* //////////////////////////// MANAGE RECIPE PAGE ////////////////////////////// */
+
+#manage-page h1 {
+    margin: 5%;
+    color: $grey;
+    font-size: 45px;
+}
+#manage-page .manage-page-card {
+    width: 80%;
+    height: 15vh;
+    margin: 0 10% 5% 10%;
+    padding: 3% 5%;
+    background-color: $bg-white;
+    border-radius: 10px;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+}
+#manage-page .manage-page-card label {
+    text-align: center;
+    color: $grey;
+    font-weight: 400;
+}
+#manage-page .manage-page-card input {
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+    border-bottom: solid 2px $dark-brown;
+}
+#manage-page .manage-page-card p {
+    margin-top: 0;
+    text-align: center;
+    color: $grey;
+    font-weight: 400;
+}
+#manage-page .manage-page-card p:last-child {
+    margin-top: 5%;
+    font-size: 30px;
+    color: $dark-brown;
+}
+#manage-page table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 5% 5% 5%;
+    background-color: $bg-white;
+}
+#manage-page table thead {
+    background-color: $dark-brown;
+    color: $white;
+}
+#manage-page table tr {
+    border-bottom: solid 1px $grey;
+}
+#manage-page table tr:last-child {
+    border-bottom: none;
+}
+#recipe-name, .recipe-name {
+    width: 60%;
+    display: inline-block;
+    text-align: left;
+    padding: 1% 2%;
+}
+.recipe-name a {
+    color: $black;
+    text-decoration: none;
+}
+#recipe-edit, #recipe-delete, .recipe-edit, .recipe-delete {
+    width: 20%;
+    display: inline-block;
+}
+.recipe-edit a, .recipe-delete form input[type="submit"] {
+    width: 80%;
+    margin: 0 10%;
+    color: $white;
+}
+.recipe-edit a {
+    text-decoration: none;
+    color: $white;
+    background-color: $light-brown;
+    padding: 2% 10%;
+    border-radius: 5px;
+    transition-duration: .5s;
+    font-size: 13px;
+    display: inline-block;
+    width: 55%;
+    font-weight: 400;
+    text-align: center;
+}
+.recipe-edit a:hover {background-color: $dark-brown;}
+.recipe-delete form input[type="submit"] {
+    background-color: $delete-button;
+    color: $white;
+    border-radius: 5px;
+    border-bottom: none;
+    padding: 2% 3%;
+    cursor: pointer;
+    transition-duration: .5s;
+    font-family: inherit;
+    font-size: 13px;
+    width: 55%;
+    font-weight: 400;
+}
+.recipe-delete form input[type="submit"]:hover {background-color: $strawberry;}
+
+/* //////////////////////////// FRIDGE ////////////////////////////// */
+
+.fridge h1 {
+    margin: 5%;
+    color: $grey;
+    font-size: 45px;
+}
+.fridge #easy-edit {
+    text-align: center;
+    font-size: 20px;
+    color: $grey;
+}
+.instructions {
+    text-align: center;
+    margin-top: 5%;
+}
+.instructions i {
+    display: block;
+    font-size: 40px;
+    margin: 3% 0;
+    color: $dark-brown;
+}
+.instructions p {
+    margin: 3% 5%;
+    font-size: 20px;
+    color: $grey;
+    line-height: 20px;
+}
+.instructions #fridge-ingredient-title {
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+.instructions #available {
+    color: $success;
+    font-weight: 400;
+    font-size: 16px;
+}
+.instructions #not-available {
+    color: $strawberry;
+    font-weight: 400;
+    font-size: 16px;
+}
+.instructions p img {
+    width: 20px;
+    margin-right: 3%;
+}
+#ingredients-not-found {
+    font-size: 20px;
+    color: $grey;
+    text-align: center;
+    margin-top: 5%;
+    text-decoration: underline;
+}
+.fridge .fridge-ingredients {
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+    display: none;
+    background-color: $bg-white;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+}
+.fridge-ingredients .search-ingredient input {
+    width: 100%;
+    text-align: center;
+}
+.fridge form {
+    display: inline;
+}
+.fridge form input[type="submit"] {
+    width: auto;
+    color: $white;
+    display: inline;
+    cursor: pointer;
+    margin: 1%;
+    border-radius: 25px;
+    padding: .5% 2%;
+}
+.fridge form input[type="submit"].out-fridge {
+    background-color: $strawberry;
+    border: solid 2px $strawberry;
+}
+.fridge form input[type="submit"].in-fridge {
+    background-color: $success;
+    border: solid 2px $success;
+}
+
+/* //////////////////////////// PROFILE ////////////////////////////// */
+
+.profile img {
+    display: block;
+    margin: 10% auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.profile .error-log {
+    width: 90%;
+    text-align: center;
+    margin: 3% 5%;
+}
+.profile img#none-photo {border-radius: 0;}
+.profile .photo-forms form {
+    display: block;
+    width: 30%;
+    margin: 2% auto;
+}
+.profile .photo-forms .upload-btn {
+    width: 100%;
+    transition-duration: .5s;
+}
+.profile .photo-forms .upload-btn:hover {
+    transform: scale(1.1);
+}
+.profile .photo-forms #delete-photo {
+    width: 100%;
+    padding: 5% 3%;
+    background-color: $delete-button;
+    border: none;
+    color: $white;
+}
+.profile .photo-forms #delete-photo:hover {
+    transform: scale(1.1);
+}
+.profile .profile-info h1 {
+    margin: 25% 10% 5% 10%;
+    text-align: center;
+    font-size: 50px;
+}
+.profile .profile-info p {
+    text-align: center;
+    margin: 0 10%;
+}
+.profile .profile-info button {
+    margin: 5% auto;
+    display: block;
+    width: 25%;
+}
+.wrong-pass {
+    color: $delete-button;
+    font-size: 20px;
+}
+.profile .overlay {
+    display: none;
+}
+.change-password {
+    width: 25%;
+    height: 80vh;
+    margin: 10vh auto 0 auto;
+    background-color: $bg-white;
+    border-radius: 5px;
+    display: none;
+}
+.change-password img {
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    margin: 10% 40% 3% 40%;
+    border-radius: 0;
+}
+.change-password form {
+    width: 80%;
+    margin: 0 10%;
+}
+.change-password label {
+    margin-top: 7%;
+}
+.change-password input {
+    width: 100%;
+    padding: 2%;
+}
+.change-password input[type="submit"] {
+    display: block;
+    padding: 3% 4%;
+    margin: 10% auto 0 auto;
+    background-color: $dark-brown;
+    color: $white;
+    width: 50%;
+    border: none;
+    transition: .5s;
+}
+.change-password input[type="submit"]:hover {
+    background-color: $success;
+}
+.change-password button {
+    width: 25%;
+    margin: 15% auto 0 auto;
+    cursor: pointer;
+    background-color: $strawberry;
+    border-color: $strawberry;
+}
+.change-password .error-log {
+    color: $strawberry;
+    width: 100%;
+}
+#password-message {
+    text-align: center;
+    color: $success;
+    margin-top: 30%;
+}
+
+/* //////////////////////////// ANIMATIONS ////////////////////////////// */
+
+@keyframes breath {
+  0% {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  25% {
+    -webkit-transform: scale(.9, .9);
+    -moz-transform: scale(.9, .9);
+    -ms-transform: scale(.9, .9);
+    -o-transform: scale(.9, .9);
+    transform: scale(.9, .9);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  75% {
+    -webkit-transform: scale(.9, .9);
+    -moz-transform: scale(.9, .9);
+    -ms-transform: scale(.9, .9);
+    -o-transform: scale(.9, .9);
+    transform: scale(.9, .9);
+  }
+  100% {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+}
+@keyframes input-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes smooth-display {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

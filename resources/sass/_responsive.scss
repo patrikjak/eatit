@@ -1,0 +1,811 @@
+
+/* ----------------------------- NAVIGATION ----------------------------- */
+
+@media only screen and (max-width: 575.98px) {
+    .nav {
+        height: 7vh;
+    }
+    .nav .row {
+        display: none;
+    }
+    .nav .menu-btn {
+        display: block;
+        width: 30px;
+        height: 3vh;
+        background-color: transparent;
+        position: absolute;
+        margin-top: 2vh;
+        margin-left: 85%;
+        cursor: pointer;
+        z-index: 22;
+    }
+    .nav .menu-btn span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: $white;
+        opacity: 1;
+        transition-duration: .5s;
+        border-radius: 25px;
+    }
+    .nav #bar1 {
+        margin-top: 0;
+        width: 30px;
+    }
+    .nav #bar2 {
+        margin-top: 5px;
+        width: 25px;
+    }
+    .nav #bar3 {
+        margin-top: 5px;
+        width: 20px;
+    }
+    .nav #bar1.open {
+        transform: rotate(45deg);
+        position: relative;
+        top: 11px;
+    }
+    .nav #bar2.open {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    .nav #bar3.open {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -5px;
+        width: 30px;
+    }
+    .nav .row.open {
+        height: 100vh;
+        background-color: rgba(0,0,0,0.9);
+        display: block;
+    }
+    .nav .left, .left-more {
+        float: none;
+        width: 100%;
+    }
+    .nav .right, .right-less {
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+    .left li {
+        margin: 0;
+    }
+    .right li {
+        margin: 0;
+    }
+    .nav li {
+        display: block;
+        margin-top: 5%;
+        margin-left: 5%;
+        padding-bottom: 7%;
+        border-bottom: solid 1px $white;
+    }
+    .nav li:first-child {
+        margin-top: 15%;
+    }
+    .nav li::after {
+        display: none;
+    }
+    .nav img {
+        position: relative;
+        top: 0;
+        width: 30%;
+        height: auto;
+        margin: 0 35%;
+    }
+    .nav #profile-photo {
+        display: inline-block;
+        margin-bottom: 25%;
+        border-bottom: none;
+    }
+    #profile-photo {
+        margin-right: 0;
+    }
+    #user-name-with-img {
+        max-width: 95%;
+    }
+    .user-name {
+        max-width: 95%;
+    }
+
+    /* ------------------------------ HOME ------------------------------ */
+
+    .home {
+        background-image: url("/eatit/public/images/mobile/mobile-home.jpg");
+        background-size: cover;
+        background-attachment: inherit;
+    }
+    .home .left, .home .right {
+        float: none;
+        width: 100%;
+    }
+    .home img {
+        max-width: 35%;
+        margin: 10% 32.5% 0 32.5%;
+    }
+    .home p {
+        margin-top: 80%;
+        margin-left: 20%;
+        margin-right: 10%;
+        font-size: 25px;
+        font-weight: 400;
+        color: $light-brown;
+    }
+    .home .log-buttons {
+        margin-left: 0;
+        margin-top: 5%;
+        text-align: center;
+    }
+    .home .log-buttons a {
+        padding: 3%;
+        margin: 2% 20%;
+        display: block;
+        width: 60%;
+    }
+    .home #about-btn {
+        display: none;
+    }
+    .about {
+        height: auto;
+    }
+    .about .row {
+        display: flex;
+        flex-flow: column;
+    }
+    .about .col-2 {
+        float: none;
+        width: 100%;
+        padding: 10%;
+    }
+    .about .col-2:first-child {
+        order: 2;
+    }
+    .about .col-2:last-child {
+        order: 1;
+    }
+    .about h1 {
+        font-size: 45px;
+        color: $dark-brown;
+    }
+    .about p {
+        font-size: 20px;
+    }
+    .about img {
+        width: 50%;
+        margin: 15% 25% 0 25%;
+    }
+    .how-to-use .row {
+        display: flex;
+        flex-flow: column;
+        height: auto;
+    }
+    .how-to-use .col-2 {
+        width: 100%;
+        float: none;
+        padding: 10%;
+    }
+    .how-to-use p {
+        font-size: 20px;
+    }
+    .how-to-use p:first-child {
+        margin-top: 0;
+    }
+    #create-recipe p span {
+        font-size: 45px;
+    }
+    .how-to-use #search-recipe .col-2:first-child {
+        order: 2;
+    }
+    .how-to-use #search-recipe .col-2:last-child {
+        order: 1;
+    }
+    .how-to-use #search-recipe p:first-child {
+        margin-top: 0;
+    }
+    .how-to-use #search-recipe p span {
+        font-size: 30px;
+    }
+    .how-to-use #fridge-index p span {
+        font-size: 35px;
+    }
+    .footer p {
+        margin-top: 15%;
+        padding: 20% 10% 15% 10%;
+    }
+
+    /* ------------------------------ LOGIN ------------------------------ */
+
+    .login {
+        background-image: none;
+    }
+    .login .row {
+        display: flex;
+        flex-flow: column;
+    }
+    .login .left, .login .right {
+        float: none;
+        width: 100%;
+    }
+    .login .left {
+        order: 2;
+    }
+    .login .right {
+        order: 1;
+    }
+    .login h1 {
+        font-size: 35px;
+        text-align: center;
+        margin-top: 15%;
+        width: 90%;
+        margin-left: 5%;
+    }
+    .login img {
+        max-width: 15%;
+        margin: 0 auto;
+    }
+    .login form {
+        text-align: center;
+        margin-left: 0;
+    }
+    .login input, .login button {
+        width: 70%;
+        margin: 4% 15%;
+        color: $grey;
+    }
+    .login button {
+        color: $white;
+    }
+    .login #forgot-password {
+        color: $grey;
+    }
+    .login .error-log {
+        width: 90%;
+        color: $strawberry;
+    }
+    .login p {
+        text-align: center;
+        margin: 3% 5%;
+    }
+    .login #email-status {
+        color: $grey;
+        width: 80%;
+        margin: 10%;
+    }
+
+    /* ------------------------------ DASHBOARD ------------------------------ */
+
+    .dashboard {
+        height: 100%;
+    }
+    .dashboard .card {
+        width: 90%;
+        height: auto;
+        margin: 5%;
+        padding: 10%;
+        float: none;
+    }
+    .dashboard .card h1 {
+        margin: 5%;
+        font-size: 25px;
+    }
+    .dashboard .card i {
+        margin: 5% 0;
+        font-size: 30px;
+    }
+    .card .button {
+        margin-top: 3%;
+        width: 60%;
+    }
+
+    /* ------------------------------ PROFILE ------------------------------ */
+
+    .profile .col-2 {
+        width: 100%;
+        float: none;
+    }
+    .profile img {
+        width: 150px;
+        height: 150px;
+    }
+    .profile .photo-forms form {
+        width: 50%;
+    }
+    .profile .profile-info button {
+        width: 40%;
+        margin: 10% auto;
+    }
+    .change-password {
+        width: 90%;
+        margin: 10vh 5% 0 5%;
+    }
+    .change-password img {
+        width: 20%;
+        height: auto;
+    }
+    .profile .overlay {
+        overflow: auto;
+    }
+    .change-password {
+        height: auto;
+        margin-bottom: 10%;
+        padding-bottom: 10%;
+    }
+
+    /* ------------------------------ CREATE ------------------------------ */
+
+    .create {
+        height: 93vh;
+        top: 7vh;
+        overflow-y: hidden;
+    }
+    .create-form {
+        width: 90%;
+        min-height: 80vh;
+    }
+    .create-form h1 {
+        margin: 0 5% 10% 5%;
+        transform: translateY(-30px);
+    }
+    .tab {
+        transform: translateY(-30px);
+    }
+    #second-tab, #third-tab, #create-ingredients {
+        height: 50vh;
+        overflow: auto;
+    }
+    #third-tab .col-2,
+    .create-form .col-3,
+    #create-ingredients .col-2
+    {
+        width: 100%;
+        float: none;
+    }
+    #second-tab #category-heading {
+        margin-top: 0;
+    }
+    #second-tab #upload-photo-h {
+        margin: 10% 5%;
+    }
+    .tab label {
+        margin-top: 5%;
+    }
+    .tab input {
+        margin-top: 5%;
+        padding: 4% 3%;
+    }
+    .circle {
+        width: 140px;
+        height: 140px;
+    }
+    .circle input[type="text"] {
+        width: 70%;
+    }
+    #add-ingredient,
+    #add-ingredient-edit {
+        width: 40%;
+        margin: 10% 30%;
+        padding: 3% 4%;
+    }
+    .tab#create-process label {
+        margin-bottom: 5%;
+    }
+    .tab textarea {
+        padding: 3% 5%;
+        height: 40vh;
+    }
+    .ingredient-list {
+        height: auto;
+    }
+    .navigation {
+        position: relative;
+        bottom: 2%;
+    }
+    .navigation button {
+        padding: 3% 2%;
+        position: relative;
+        left: -5%;
+        width: 40%;
+        margin: 0 0 5% 0;
+    }
+    .navigation button:hover {
+        transform: none;
+    }
+
+    /* ------------------------------ SEARCH ------------------------------ */
+
+    .search-panel,
+    .recipes {
+        width: 100%;
+        height: auto;
+        float: none;
+        position: static;
+    }
+    .recipe-card {
+        width: 45%;
+        height: 31vh;
+    }
+    .recipe-card img {
+        height: 15vh;
+    }
+    .recipe-card .show-ingredients-btn {
+        padding: 4%;
+    }
+    .recipe-card .recipe-ingredients li {
+        margin: 3% 5%;
+    }
+    .recipes .overlay {
+        background-image: none;
+        background-color: $bg-white;
+    }
+    .recipes .overlay .col-2 {
+        float: none;
+        width: 100%;
+    }
+    .recipes .overlay .recipe-card {
+        width: 80%;
+        height: 48vh;
+        margin: 5vh 10%;
+    }
+    .recipes .overlay .recipe-card img {
+        height: 25vh;
+    }
+    .recipes .overlay .col-2:first-child {
+        height: 65%;
+    }
+    .recipes .overlay .col-2:first-child .exit-btn {
+        position: static;
+        width: 60%;
+        margin-left: 20%;
+    }
+    .recipes .overlay .col-2:first-child .exit-btn button {
+        padding: 4%;
+    }
+    .recipes .overlay .col-2:last-child h1 {
+        font-size: 45px;
+        margin: 20% 10% 0 10%;
+        text-align: center;
+    }
+    .recipe-not-found {
+        margin: 65% 5% 10% 5%;
+    }
+
+    /* ------------------------------ RECIPE ------------------------------ */
+
+    .recipe {
+        background-image: url("/eatit/public/images/mobile/recipe-mobile.jpg");
+        height: auto;
+    }
+    .recipe .col-2 {
+        float: none;
+        width: 100%;
+    }
+    .recipe .col-2:first-child, .recipe .col-2:last-child {
+        width: 100%;
+    }
+    .recipe .image-overlay {
+        width: 250px;
+        height: 250px;
+        margin: 10% auto;
+    }
+    .recipe .overlay img.landscape, .recipe .overlay img.portrait {
+        width: 90%;
+    }
+    .recipe h1 {
+        font-size: 55px;
+        margin: 0 10%;
+        text-align: center;
+        color: $grey;
+    }
+    .recipe #description {
+        font-size: 16px;
+        text-align: center;
+        margin: 5% 10%;
+    }
+    .recipe .line, .recipe-2 .line {
+        margin: 0 auto;
+    }
+    .recipe-info .col-4 {
+        width: 50%;
+    }
+    .recipe .recipe-info {
+        width: 100%;
+        margin-right: 0;
+    }
+    .recipe .info-group {
+        width: 90%;
+        margin: 10% 5%;
+    }
+    .recipe .info-group img {
+        width: 40px;
+        min-height: 40px;
+    }
+    .recipe-2 {
+        height: auto;
+    }
+    .recipe-2 .col-2, .recipe-2 .col-2:first-child, .recipe-2 .col-2:last-child {
+        width: 100%;
+        float: none;
+    }
+    .recipe-2 .ingredients {
+        height: 70vh;
+    }
+    .recipe-2 .ingredients .list-of-ingredients {
+        height: 40vh;
+    }
+    .recipe-2 .ingredients p {
+        font-size: 16px;
+    }
+    .recipe-2 .process {
+        width: 90%;
+        margin: 5%;
+    }
+    .recipe-2 .process h1 {
+        text-align: center;
+    }
+    .recipe-2 .actions {
+        width: 90%;
+        height: 30vh;
+    }
+    .recipe-2 .col-3 {
+        float: none;
+        width: 100%;
+    }
+    .recipe-2 .actions a, .recipe-2 .actions input {
+        margin: 1vh 20%;
+        width: 60%;
+    }
+    .recipe-2 .actions a {
+        margin-top: 10%;
+    }
+
+    /* ------------------------------ MANAGE ------------------------------ */
+
+    #manage-page h1 {
+        text-align: center;
+        margin: 10%;
+    }
+    #manage-page .col-2 {
+        float: none;
+        width: 100%;
+    }
+    #manage-page .manage-page-card label, #manage-page .manage-page-card p {
+        margin-top: 5%;
+    }
+    #manage-page table {
+        margin: 5%;
+    }
+    #recipe-name, .recipe-name {
+        width: 100%;
+        padding: 3%;
+    }
+    #recipe-edit, #recipe-delete, .recipe-edit, .recipe-delete {
+        width: 39%;
+        margin: 2% 5%;
+    }
+    .recipe-edit a, .recipe-delete form input[type="submit"] {
+        margin: 0;
+        padding: 5% 10%;
+        width: 100%;
+    }
+
+    /* ------------------------------ FRIDGE ------------------------------ */
+
+    .fridge h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: 10% 5%;
+    }
+    .fridge #easy-edit {
+        font-size: 18px;
+        margin: 3% 5%;
+    }
+    .fridge .col-3 {
+        float: none;
+        width: 90%;
+        margin: 15% 5%;
+    }
+    .instructions p {
+        font-size: 18px;
+    }
+    .search-ingredient {
+        margin: 10% 5%;
+    }
+    .fridge-ingredients .search-ingredient input {
+        padding: 4% 2%;
+        margin: 5% 0;
+    }
+    .fridge form input[type="submit"] {
+        padding: 3%;
+    }
+
+    /* ------------------------------ ADMIN ------------------------------ */
+
+    .admin .col-2:first-child, .admin .col-2:last-child {
+        float: none;
+        width: 100%;
+    }
+    .admin-panel {
+        height: auto;
+        padding-bottom: 15%;
+    }
+    .admin-panel ul {
+        margin-top: 5%;
+    }
+    .admin h1 {
+        text-align: center;
+        font-size: 45px;
+    }
+    .information .col-3 {
+        width: 100%;
+        float: none;
+    }
+    .admin-card {
+        height: auto;
+        padding-bottom: 10%;
+    }
+    .admin-card h1 {
+        font-size: 25px;
+    }
+    .admin-card:last-child {
+        margin-bottom: 10%;
+    }
+    .admin-card p.bigger-text {
+        margin: 15% 10% 0 10%;
+    }
+}
+
+// IPHONE 6/7/8 PLUS
+
+@media only screen and (max-width: 414px) and (max-height: 736px) {
+
+    /* ------------------------------ HOMEPAGE ------------------------------ */
+
+    .home p {
+        margin-top: 60%;
+    }
+
+    /* ------------------------------ CREATE ------------------------------ */
+
+    #second-tab,
+    #third-tab,
+    #create-ingredients,
+    #create-process {
+        height: 45vh;
+        overflow: auto;
+    }
+
+    /* ------------------------------ SEARCH ------------------------------ */
+
+    .recipe-card {
+        height: 35vh;
+    }
+    .recipe-card img {
+        height: 17vh;
+    }
+    .recipes .overlay .recipe-card {
+        height: 55vh;
+    }
+    .recipes .overlay .recipe-card img {
+        height: 30vh;
+    }
+
+    /* ------------------------------ MANAGE ------------------------------ */
+
+    #manage-page .manage-page-card {
+        height: 17vh;
+    }
+}
+
+// IPHONE 6/7/8
+
+@media only screen and (max-width: 375px) and (max-height: 667px) {
+
+    /* ------------------------------ CREATE ------------------------------ */
+
+    #second-tab,
+    #third-tab,
+    #create-ingredients,
+    #create-process {
+        height: 43vh;
+        overflow: auto;
+    }
+
+    /* ------------------------------ SEARCH ------------------------------ */
+
+    .recipe-card {
+        height: 37vh;
+    }
+    .recipe-card img {
+        height: 18vh;
+    }
+
+    /* ------------------------------ RECIPE ------------------------------ */
+
+    .recipe-2 .ingredients {
+        height: 75vh;
+    }
+    .recipe-2 .ingredients .list-of-ingredients {
+        height: 42vh;
+    }
+    .recipe-2 .actions {
+        height: 35vh;
+    }
+    .recipe-2 .actions a, .recipe-2 .actions input {
+        height: 5vh;
+    }
+}
+
+// IPHONE 5/SE
+
+@media only screen and (max-width: 320px) and (max-height: 568px) {
+
+    /* ------------------------------ HOMEPAGE ------------------------------ */
+
+    .home p {
+        margin-top: 55%;
+    }
+
+    /* ------------------------------ CREATE ------------------------------ */
+
+    #second-tab,
+    #third-tab,
+    #create-ingredients,
+    #create-process{
+        height: 33vh;
+        overflow: auto;
+    }
+
+    /* ------------------------------ SEARCH ------------------------------ */
+
+    .choose-category button {
+        height: 15vh;
+    }
+    .recipe-card {
+        height: 45vh;
+    }
+    .recipe-card img {
+        height: 20vh;
+    }
+    .recipes .overlay .recipe-card {
+        height: 58vh;
+    }
+    .recipes .overlay .col-2:last-child h1 {
+        margin: 10% 10% 0 10%;
+    }
+    .recipe-not-found {
+        font-size: 30px;
+    }
+
+    /* ------------------------------ RECIPE ------------------------------ */
+
+    .recipe .image-overlay {
+        width: 200px;
+        height: 200px;
+    }
+    .recipe-2 .ingredients {
+        height: 80vh;
+    }
+    .recipe-2 .actions {
+        height: 37vh;
+    }
+
+    /* ------------------------------ MANAGE ------------------------------ */
+
+    #manage-page .manage-page-card {
+        height: 20vh;
+    }
+}
+
+/*
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }*/
